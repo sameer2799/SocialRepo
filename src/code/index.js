@@ -78,6 +78,15 @@ const socialLinks = getSocialLinks();
 // ============== Home ==============
 function showCopyMessage(key) {
     console.log(`Copied ${key} to clipboard!`);
+
+    const span = document.getElementById("confirm-pop");
+    span.textContent =  `${key} profile copied!`;
+    const p = document.getElementById("confirm-pop-container");
+	p.style.display = "flex";
+    setTimeout(() =>{
+
+    	p.style.display = "none";
+    }, "2500");
 };
 
 function createImage(key) {
@@ -94,6 +103,7 @@ function createSocialLink(key, value) {
     const img = createImage(key);
     img.onload = () => {
         li.appendChild(img);
+        li.title = `${key}`;
         li.addEventListener("click", () => {
             navigator.clipboard.writeText(value); // Copy the value to clipboard
             showCopyMessage(key);

@@ -16,6 +16,7 @@
     --accent-color: #d0beff;
     --text-color: #eeeeee;
     --text-color-2: #242327;
+    --success: #4ef542;
 }
 
 body {
@@ -182,6 +183,28 @@ p {
     border-radius: inherit;
     width: 100%;
     height: 100%;
+}
+#confirm-pop-container{
+
+	display: none;
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+
+    align-items: center;
+    gap: 0.5rem;
+}
+#confirm-pop {
+
+	z-index: 9;
+	font-size: 0.9rem;
 }
 
 /* ============== Info Panel ============== */
